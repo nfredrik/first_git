@@ -10,6 +10,7 @@
 #include <errno.h>
 
 /*
+    Picked from Udacity software course CS258, chapter 3-9.
 
     Testing a little unix utility, read_all().
 
@@ -120,7 +121,7 @@ int main(void)
   srand(time(NULL));
   int fd = open("nosse.txt", O_RDONLY);
 
-  assert( fd >= 0);
+  assert(fd >= 0);
 
   struct stat buf;
   int res = fstat(fd, &buf);
@@ -131,12 +132,12 @@ int main(void)
   assert (definitive);
 
   res = read(fd, definitive, len);
-  assert ( res == len );
+  assert (res == len);
 
   int i;
   char *test = (char *) malloc(len);
 
-  for(i=0; i<100;i++ ) {
+  for( i=0; i<100;i++ ) {
 
     res = lseek(fd, 0, SEEK_SET);
     assert(res == 0);
