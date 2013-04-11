@@ -3,10 +3,9 @@
 import httplib
 
 def send(host):
-    if use_ssl:
-        conn = httplib.HTTPSConnection(host)
-    else:
-        conn = httplib.HTTPConnection(host)
+   
+    conn = httplib.HTTPConnection(host)
+    
     try:
         conn.request('GET', path)
         body = conn.getresponse().read()
